@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pedido de Maribí · Magikal</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f7f4fa;color:#231835;font:16px/1.5 system-ui,sans-serif}main{max-width:690px;margin:auto;padding:24px 16px 60px}header{padding:24px;border-radius:20px;background:#302048;color:white}small{letter-spacing:.14em;font-weight:700}h1,h2,h3,p{margin:0 0 .5em}section{background:white;margin-top:16px;border:1px solid #e0d7e6;padding:20px;border-radius:16px}label{display:block;font-weight:600;margin:12px 0}input,select,button,a.action,textarea{font:inherit;border-radius:9px;padding:10px;width:100%}input,select,textarea{border:1px solid #93899e;background:white;color:inherit}button,a.action{display:block;text-align:center;text-decoration:none;background:#65398c;color:white;border:0;cursor:pointer;margin:10px 0}button.secondary{background:#efe8f4;color:#482362}ul{padding-left:20px}li{margin:8px 0}li button{display:inline;width:auto;font-size:14px;margin:0 0 0 6px;padding:5px 9px}output{display:block;color:#50326e}textarea{height:150px} [hidden]{display:none!important}
+</style>
+<main><header><small>MAGIKAL · MAYORISTAS</small><h1>Pedido de Maribí</h1><p>Elige una tienda y agrega sus covers. Puedes incluir varias tiendas en el mismo pedido.</p></header>
+<section><h2>Agregar covers</h2><p id="guardado" role="status"></p><form id="formulario">
+<label>Tienda<select id="tienda" required></select></label>
+<label id="nuevaFila" hidden>Nombre de la tienda nueva<input id="nueva" maxlength="80"></label>
+<label>Línea<select id="linea"></select></label><label>Modelo exacto<select id="modelo"></select></label><label>Color<select id="color"></select></label>
+<label>Cantidad<input id="cantidad" type="number" min="1" max="99999" step="1" value="1" required inputmode="numeric"></label>
+<button>Agregar al pedido</button><output id="aviso" aria-live="polite"></output></form></section>
+<section><h2>Revisar pedido</h2><div id="resumen"></div><p id="condicion">Solicitud sujeta a verificación de disponibilidad y aprobación comercial de Eric.</p>
+<div id="acciones" hidden><a class="action" id="compartir">Compartir pedido por WhatsApp</a><button class="secondary" id="copiar">Copiar pedido</button><textarea id="texto" aria-label="Mensaje del pedido" readonly hidden></textarea></div>
+<button class="secondary" id="nuevo" hidden>Iniciar otro pedido</button></section>
+<section><h2>Historial de pedidos</h2><p>El historial y el borrador se guardan solo en este navegador y dispositivo. Si borras los datos del navegador, se pierden.</p><div id="historial"></div></section></main>
+<script src="catalogo.js"></script><script src="pedido.js"></script></html>
